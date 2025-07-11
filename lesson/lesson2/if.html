@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+<script>
+
+	let color = 'green'
+	if(color === 'red'){
+		console.log('stop')
+	}else{
+		console.log('go')
+	}
+
+
+
+	let age = prompt('enter your age:');
+	if(+age > 18){
+		console.log('go')
+	}else{
+		console.log('STOP')
+	}
+
+
+
+	let promptColor = prompt('Enter color:')
+	if(promptColor === 'green'){	
+		if(confirm('is road clean?')){
+	console.log('go')
+		}else {
+			console.log('just wait')
+		}
+	}else if(promptColor === 'yellow') {
+		console.log('wait')
+	}else if(promptColor === 'red'){
+		console.log('stop')
+	}
+
+</script>	
+</body>
+</html>

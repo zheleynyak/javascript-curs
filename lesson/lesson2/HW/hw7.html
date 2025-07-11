@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // #3ckURgvs – Дано змінну time яка рівна числу від 0 до 59. 
+        // Потрібно написати код, який перевірить, до якої четверті години попадає число.
+
+        let time = +prompt('0-59')
+        if(time >=0 && time < 16){
+            console.log('1')
+        }else if(time >= 16 && time < 31){
+            console.log('2')
+        }else if(time >= 31 && time < 46){
+            console.log('3')
+        }else if(time >= 46 && time < 60){
+            console.log('4')
+        }
+    </script>
+</body>
+</html>
