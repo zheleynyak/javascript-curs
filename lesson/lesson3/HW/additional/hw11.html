@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // #qLQLJSeN7i
+        // – є масив [2,17,13,6,22,31,45,66,100,-18] :
+        // 1. перебрати його циклом while 0
+        // 2. перебрати його циклом for 0
+        // 3. перебрати циклом while та вивести  числа тільки з непарним індексом 0
+        // 4. перебрати циклом for та вивести  числа тільки з непарним індексом 0
+        // 5. перебрати циклом while та вивести  числа тільки парні  значення 0
+        // 6. перебрати циклом for та вивести  числа тільки парні  значення 0
+        // 7. замінити кожне число, кратне 3, на слово “okten” 0
+        // 8. вивести масив у зворотньому порядку. 0
+        // 9. всі попередні завдання (окрім 8), але у зворотньому циклі (задом наперед) 0
+
+        let array = [2,17,13,6,22,31,45,66,100,-18]
+
+        // 1. перебрати його циклом while
+        // let i = 0
+        // while(i < array.length){
+        //     console.log(array[i])
+        //     i++
+        // }
+
+        // 2. перебрати його циклом for
+        // for(let i = 0; i < array.length; i++){
+        //     console.log(array[i])
+        // }
+
+        // 3. перебрати циклом while та вивести  числа тільки з непарним індексом
+        // let i = 0
+        // let x
+        // while(i < array.length){
+        //     x = array[i]%2
+        //     if(x){
+        //         console.log(array[i])
+        //     }
+        //     i++
+        // }
+
+        // 4. перебрати циклом for та вивести  числа тільки з непарним індексом
+        // let x
+        // for(let i = 0; i < array.length; i++){
+        //     x = array[i]%2
+        //     if(x){
+        //         console.log(array[i])
+        //     }
+        // }
+
+        // 5. перебрати циклом while та вивести  числа тільки парні  значення
+        // let i = 0
+        // let x
+        // while(i < array.length){
+        //     x = array[i]%2
+        //     if(!x){
+        //         console.log(array[i])
+        //     }
+        //     i++
+        // }
+
+        // 6. перебрати циклом for та вивести  числа тільки парні  значення
+        // for(let i = 0; i < array.length; i++){
+        //     x = array[i]%2
+        //     if(!x){
+        //         console.log(array[i])
+        //     }
+        // }
+
+        // 7. замінити кожне число, кратне 3, на слово “okten”
+        // let x
+        // for(let i = 0; i < array.length; i++){
+        //     x = array[i]%3
+        //     if(!x){
+        //         array[i] = 'okten'
+        //     }
+        // }
+        // console.log(array)
+
+        // 8. вивести масив у зворотньому порядку.
+        // for(let i = array.length - 1; i >= 0; i--){
+        //     console.log(array[i])
+        // }
+
+
+        // 1.9. перебрати його циклом while 
+        // let i = array.length - 1
+        // while(i >= 0){
+        //     console.log(array[i])
+        //     i--
+        // }
+
+        // 2.9. перебрати його циклом for
+        // for(let i = array.length - 1; i >= 0; i--){
+        //     console.log(array[i])
+        // }
+        
+        // 3.9 перебрати циклом while та вивести  числа тільки з непарним індексом
+        // let i = array.length - 1
+        // let x
+        // while(i >= 0){
+        //     x = array[i]%2
+        //     if(x){
+        //         console.log(array[i])
+        //     }
+        //     i--
+        // }
+
+        // 4.9 перебрати циклом for та вивести  числа тільки з непарним індексом
+        // let x
+        // for(let i = array.length - 1; i >= 0; i--){
+        //     x = array[i]%2
+        //     if(x){
+        //         console.log(array[i])
+        //     }
+        // }
+
+        // 5.9 перебрати циклом while та вивести  числа тільки парні  значення
+        // let i = array.length - 1
+        // let x
+        // while(i >= 0){
+        //     x = array[i]%2
+        //     if(!x){
+        //         console.log(array[i])
+        //     }
+        //     i--
+        // }
+
+        // 6.9 перебрати циклом for та вивести  числа тільки парні  значення
+        // let x
+        // for(let i = array.length - 1; i >= 0; i--){
+        //     x = array[i]%2
+        //     if(!x){
+        //         console.log(array[i])
+        //     }
+        // }
+
+        // 7.9 замінити кожне число, кратне 3, на слово “okten”
+        let x
+        for(let i = array.length - 1; i >= 0; i--){
+            x = array[i]%3
+            if(!x){
+                array[i] = 'okten'
+            }
+            console.log(array[i])
+        }
+    </script>
+</body>
+</html>
