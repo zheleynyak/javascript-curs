@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // #gEFoxMMO – створити функцію, яка приймає масив примітивних елементів (числа,стрінги,булеві), та будує для них список (ul li) та виводить його через document.write
+        function arrayBuilder(array){
+            document.write(`<ul>`)
+                for(item of array){
+                    document.write(`<li>${item}</li>`)
+                }
+            document.write(`</ul>`)
+        }
+
+        let arr = [1, 5, 23, true, 'aadfds', NaN, undefined]
+        arrayBuilder(arr)
+    </script>
+</body>
+</html>
