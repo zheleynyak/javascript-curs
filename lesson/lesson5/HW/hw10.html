@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // #pghbnSB – створити функцію, яка повертає найменше число з масиву
+        let minNumber = (array) => {
+            let numb = array[0]
+            for(const item of array){
+                if(numb > item){
+                    numb = item
+                }
+            }
+            return numb
+        }
+
+        console.log(minNumber([1,2,3,4,0,-2]))
+    </script>
+</body>
+</html>

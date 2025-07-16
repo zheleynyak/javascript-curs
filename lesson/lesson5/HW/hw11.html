@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // #EKRNVPM – створити функцію sum(arr), яка приймає масив чисел, сумує значення елементів масиву та повертає його. Приклад sum([1,2,10]) //->13
+        let sum = (array) => {
+            let sum = 0
+            for(const item of array){
+                sum+=item
+            }
+            return sum
+        }
+
+        console.log(sum([1,2,3,4,5]))
+    </script>
+</body>
+</html>
