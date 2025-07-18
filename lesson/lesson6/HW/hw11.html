@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // #EP5I1UUzAX
+        // Взяти описану колоду карт, та за допомогою reduce “упакувати” всі карти по “мастях” в об’єкт
+        // Приклад моделі кінцевого об’єкту
+        // {
+        //     spades:[],
+        //     diamonds:[],
+        //     hearts:[],
+        //     clubs:[]
+        // }
+
+        let value = [6, 7, 8, 9, 10, 'Jack', 'Queen', 'King', 'Ace']
+        let suit = ['Hearts', 'Spades', 'Diamonds', 'Clubs']
+
+        let cards = []
+
+        for (const cardValue of value) {
+            for (const cardSuit of suit) {
+                if (cardSuit === 'Hearts' || cardSuit === 'Diamonds') {
+                    cards.push({ cardSuit: cardSuit, cardValue: cardValue, color: 'red' })
+                } else {
+                    cards.push({ cardSuit: cardSuit, cardValue: cardValue, color: 'black' })
+                }
+            }
+        }
+        console.log(cards)
+
+        let reduce = cards.reduce((acc, card) => {
+            if (card.cardSuit === 'Spades') {
+                acc.spades.push(card)
+            } else if (card.cardSuit === 'Hearts') {
+                acc.hearts.push(card)
+            } else if (card.cardSuit === 'Diamonds') {
+                acc.diamonds.push(card)
+            } else if (card.cardSuit === 'Clubs') {
+                acc.clubs.push(card)
+            }
+            return acc
+        }, { spades: [], diamonds: [], hearts: [], clubs: [] })
+        console.log(reduce)
+
+    </script>
+</body>
+
+</html>
