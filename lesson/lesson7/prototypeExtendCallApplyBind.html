@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    function User(name,age){
+        this.name = name
+        this.age = age 
+    }
+</script>
+<script>
+    // console.log('hi bro')
+
+
+    // let user1 = new User('Vasua', 31)
+    // user1.greeting = function() {
+    //     console.log('qewrty')
+    // } 
+    
+    // console.log(user1)    
+    // user1.greeting()
+
+    // console.log(User)
+    // User.prototype.greeting = function(){
+    //     return `hello my name is ${this.name}`
+    // }
+    // let user2 = new User('Anna', 29)
+    // console.log(user2.greeting())
+
+    let user1 = new User('Anna', 29)
+    user1.greeting = function(msg) {
+        return `${msg} my name is ${this.name}` 
+    }
+
+    let user2 = new User('Vasua', 38)
+    // user1.greeting.apply(user2) // => user2.greeting
+    // console.log(user1.greeting.apply(user2, ['Hello']))
+    // console.log(user1.greeting.call(user2,'HELLO'))
+    let greetingCopy = user1.greeting.bind(user2,'HELLOOO')
+    console.log(greetingCopy())
+</script> 
+</body>
+</html>

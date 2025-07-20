@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+        class User {
+            constructor(name, age){
+                this.name = name
+                this.age = age
+            }
+            // static
+            greeting(msg) {
+                // console.log(this)
+                // console.log(this.age)
+                return `${msg} my name is ${this.name}`
+            }
+
+            work(){
+                return `work in process`
+            }
+
+        }
+        let user = new User('Denis', 21)
+        console.log(user)
+        // console.log(user.greeting('HELLO'))
+
+        // console.log(User.greeting('hello'))
+
+        class Customer extends User {
+            constructor(name, age, password){
+                super(name, age)
+                this.passowrd = password
+            }
+        } 
+        let customer = new Customer('vasua', 32, '1111') 
+        console.log(customer)
+        customer.work()
+
+        
+        function User1(name, age){
+            this.name = name
+            this.age = age
+        }
+
+        function Customer1(name,age,password) {
+            User1.apply(this, arguments)
+            this.password = password
+        }
+
+        let customer1 = new Customer('DENIS', 22, '1111')
+        console.log(customer1)
+   </script> 
+</body>
+</html>

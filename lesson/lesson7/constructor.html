@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+    function User(name,status,age){
+        this.name = name
+        this.status = status
+        this.age = age
+    }
+    let user1 = new User('Denis', true, 19)
+    console.log(user1)
+
+    function Wife(name,age,status,wife){
+        this.name = name
+        this.age = age
+        this.wife = wife
+    }
+    let wife1 = new Wife('Denis', 29, true, {name: 'Anna', age: 29})
+    console.log(wife1)
+
+    function Wife2(name,age,status,wifeName,wifeAge){
+        this.name = name
+        this.age = age
+        this.status = status
+        this.wife = {name: wifeName, age: wifeAge}
+    }
+    let wife2 = new Wife2('Denis',25, true, 'Anna', 26)
+    console.log(wife2)
+
+    function Wife3(name,age,status,wifeName,wifeAge){
+        this.name = name
+        this.age = age
+        this.status = status
+        this.wife = {name: wifeName, age: wifeAge}
+        this.greeting = function(){
+            console.log('hi + ' + this.name)
+        }
+    }
+    let wife3 = new Wife3('Denis',25, true, 'Anna', 26)
+    console.log(wife3)
+   </script> 
+</body>
+</html>

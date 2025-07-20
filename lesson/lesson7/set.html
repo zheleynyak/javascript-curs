@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+        let set = new Set()
+        set.add('asd')
+        set.add('qwe')
+        set.add('asd')
+        set.add('xxx')
+        console.log(set)
+
+        console.log(set.has('xxx'))
+
+        set.delete('xxx')
+        console.log(set)
+
+        console.log(set.size)
+
+        set.forEach(value => console.log(value))
+
+        let arraySet = Array.from(set)
+        console.log(arraySet)
+        console.log(arraySet === set)
+
+        let arrayFromSet = new Set([11,22,11,24,55,6,22,55])
+        console.log(arrayFromSet)
+
+        let numbers = Array.from(arrayFromSet)
+        console.log(numbers)
+   </script> 
+</body>
+</html>
