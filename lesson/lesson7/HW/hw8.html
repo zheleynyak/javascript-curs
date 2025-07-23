@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            // #zg6Fifnqig
+            // – створити клас/функцію конструктор попелюшка з полями ім’я, вік, розмір ноги. Створити масив з 10 попелюшок.
+            // Створити об’єкт класу “принц” за допомоги класу який має поля ім’я, вік, туфелька яку він знайшов.
+            // За допомоги циклу знайти, яка попелюшка повинна бути з принцом.
+            // ! Додатково, знайти необхідну попелюшку за допомогою функції масиву find та відповідного колбеку
+
+            class Cinderella {
+                constructor(name, age, footSize) {
+                    this.name = name;
+                    this.age = age;
+                    this.footSize = footSize;
+                }
+            }
+
+            class Prince {
+                constructor(name, age, shoe) {
+                    this.name = name;
+                    this.age = age;
+                    this.shoe = shoe;
+                }
+            }
+
+            let cinderellas = [
+                new Cinderella('Anna', 19, 35),
+                new Cinderella('Bella', 21, 36),
+                new Cinderella('Clara', 22, 37),
+                new Cinderella('Diana', 20, 34),
+                new Cinderella('Eva', 18, 35.5),
+                new Cinderella('Fiona', 23, 36.5),
+                new Cinderella('Grace', 24, 38),
+                new Cinderella('Hanna', 19, 37.5),
+                new Cinderella('Isla', 25, 39),
+                new Cinderella('Julia', 20, 34),
+            ];
+            console.log(cinderellas);
+
+            let prince = new Prince('Edward', 25, 36);
+            for (const cinderella of cinderellas) {
+                if (prince.shoe === cinderella.footSize) {
+                    console.log(cinderella);
+                }
+            }
+
+            let find = cinderellas.find(
+                (value) => value.footSize === prince.shoe
+            );
+            console.log(find);
+        </script>
+    </body>
+</html>

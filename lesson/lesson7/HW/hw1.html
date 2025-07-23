@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // #XjJuucOMR0
+      // – Створити функцію конструктор для об’єктів User з полями id, name, surname , email, phone
+      // створити пустий масив, наповнити його 10 об’єктами new User(….)
+
+      function User(id, name, surname, email, phone) {
+        this.id = id;
+        this.nama = name;
+        this.surname = surname;
+        this.email = email;
+        this.phone = phone;
+      }
+
+      let user = [
+        new User(1, "Denis", "Perelman", "denis.perelman@example.com", 1234567),
+        new User(2, "Anna", "Ivanova", "anna.ivanova@example.com", 2345678),
+        new User(3, "Oleg", "Sidorov", "oleg.sidorov@example.com", 3456789),
+        new User(4, "Maria", "Petrova", "maria.petrova@example.com", 4567890),
+        new User(5, "Ivan", "Kuznetsov", "ivan.kuznetsov@example.com", 5678901),
+        new User(6, "Elena", "Popova", "elena.popova@example.com", 6789012),
+        new User(7, "Alex", "Smirnov", "alex.smirnov@example.com", 7890123),
+        new User(8, "Nina", "Volkova", "nina.volkova@example.com", 8901234),
+        new User(9, "Pavel", "Lebedev", "pavel.lebedev@example.com", 9012345),
+        new User(10, "Sergey", "Egorov", "sergey.egorov@example.com", 1234012),
+      ];
+
+      console.log(user);
+    </script>
+  </body>
+</html>

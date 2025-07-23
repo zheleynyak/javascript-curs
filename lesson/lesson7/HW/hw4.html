@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            // #nkMXISv – створити конструктор для об’єктів Client з полями id, name, surname , email, phone, order (поле є масивом зі списком товарів)
+            // створити пустий масив, наповнити його 10 об’єктами Client
+            function Client(id, name, surname, email, phone, other) {
+                this.id = id;
+                this.name = name;
+                this.surname = surname;
+                this.email = email;
+                this.phone = phone;
+                this.ohter = other;
+            }
+
+            let client1 = [
+                new Client(1, 'Denis', 'Zheleznyak', 'dz@ye.com', '+32345', [
+                    'coca-cola',
+                    'iphone',
+                    'macbook',
+                    'mouse',
+                ]),
+                new Client(2, 'Anna', 'Ivanova', 'dz@ye.com', '+32345', [
+                    'coca-cola',
+                ]),
+                new Client(3, 'Oleg', 'Sidrov', 'dz@ye.com', '+32345', [
+                    'coca-cola',
+                    'phone',
+                ]),
+                new Client(4, 'Maria', 'Petrova', 'dz@ye.com', '+32345', [
+                    'coca-cola',
+                    't-shorts',
+                    'apples',
+                ]),
+                new Client(5, 'Ivan', 'Kuznetsov', 'dz@ye.com', '+32345', [
+                    'coca-cola',
+                    'pineapple',
+                ]),
+                new Client(6, 'Elena', 'Popova', 'dz@ye.com', '+32345', [
+                    'coca-cola',
+                    'leptBook',
+                    'car',
+                    'phone',
+                    'meat',
+                ]),
+                new Client(7, 'Alex', 'Smirnov', 'dz@ye.com', '+32345', [
+                    'coca-cola',
+                    'meat',
+                ]),
+                new Client(8, 'Nina', 'Volkova', 'dz@ye.com', '+32345', [
+                    'coca-cola',
+                    'meat',
+                    'apple',
+                ]),
+                new Client(9, 'Pavel', 'Lebedev', 'dz@ye.com', '+32345', [
+                    'coca-cola',
+                    'sprite',
+                ]),
+                new Client(10, 'Sergey', 'Egorov', 'dz@ye.com', '+32345', [
+                    'coca-cola',
+                    'ice cream',
+                ]),
+            ];
+            console.log(client1);
+        </script>
+    </body>
+</html>
