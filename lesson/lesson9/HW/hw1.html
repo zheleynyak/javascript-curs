@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            // #8Nmt60ZT
+            // – створити блок,
+            // – додати йому класи wrap, collapse, alpha, beta
+            // – додати стилі (довільні значення) : колір фону, колір тексту, розмір тексту
+            // – додати цей блок в body.
+            // – клонувати його повністю, та додати клон в body.
+
+            let div = document.createElement('div');
+
+            div.classList.add('wrap', 'collapse', 'alpha', 'beta');
+            div.style.fontFamily = 'monospace';
+
+            div.innerText = 'qwerty';
+
+            let div2 = document.createElement('div');
+
+            div.classList.add('wrap', 'collapse', 'alpha', 'beta');
+            div.style.fontFamily = 'monospace';
+
+            div2.innerText = 'qwerty2';
+
+            let divClone = div.cloneNode(true);
+
+            document.body.append(div, div2, divClone);
+        </script>
+    </body>
+</html>

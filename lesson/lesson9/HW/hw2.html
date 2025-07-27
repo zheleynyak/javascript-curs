@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .menu {
+                display: flex;
+                justify-content: center;
+                gap: 50px;
+                list-style-type: none;
+                font-size: 24px;
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+            // #OPLI89c9G
+            // – Є масив:
+            // [‘Main’,’Products’,’About us’,’Contacts’]
+            // Зробити ul в середині якої будуть лежати елементи масиву (кожен в своєму li)
+
+            let arr = ['Main', 'Products', 'About us', 'Contacts'];
+
+            const ul = document.createElement('ul');
+            for (let i = 0; i < arr.length; i++) {
+                const li = document.createElement('li');
+                li.innerText = arr[i];
+                ul.appendChild(li);
+            }
+
+            ul.classList.add('menu');
+
+            document.body.appendChild(ul);
+        </script>
+    </body>
+</html>
