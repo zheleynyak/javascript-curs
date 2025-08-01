@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. A inventore
+            eius architecto sint ea quasi doloribus, voluptate cum nisi soluta.
+        </div>
+        <button class="textHide">pres</button>
+        <script>
+            // #sH8c4er – Створити довільний елемент з id = text та створити кнопку.
+            // Використовуючи JavaScript, зробіть так, щоб при натисканні на кнопку зникав елемент з id=”text”.jk
+
+            let buttonHide = document.getElementsByClassName('textHide')[0];
+            let divText = document.getElementsByClassName('text')[0];
+            buttonHide.onclick = function () {
+                // divText.innerText = '';
+                divText.remove();
+            };
+        </script>
+    </body>
+</html>

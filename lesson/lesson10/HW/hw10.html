@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <div id="users">
+        <ul id="ulUser">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <button id="prev">prev</button>
+    <button id="next">next</button>
+
+    <body>
+        <script>
+            // #NKB0tgWIK1G
+            // ***PAGINATION
+            // зробити масив на 100 об’єктів та дві кнопки prev next
+            // при завантаженні сторінки з’являються перші 10 об’єктів.
+            // При натисканні next виводяться наступні 10 об’єктів
+            // При натисканні prev виводяться попередні 10 об’єктів
+
+            const people = [
+                { name: 'User1', age: 25, status: 'active' },
+                { name: 'User2', age: 30, status: 'inactive' },
+                { name: 'User3', age: 22, status: 'pending' },
+                { name: 'User4', age: 28, status: 'active' },
+                { name: 'User5', age: 35, status: 'inactive' },
+                { name: 'User6', age: 26, status: 'pending' },
+                { name: 'User7', age: 40, status: 'active' },
+                { name: 'User8', age: 31, status: 'inactive' },
+                { name: 'User9', age: 24, status: 'pending' },
+                { name: 'User10', age: 27, status: 'active' },
+                { name: 'User11', age: 29, status: 'inactive' },
+                { name: 'User12', age: 33, status: 'pending' },
+                { name: 'User13', age: 38, status: 'active' },
+                { name: 'User14', age: 23, status: 'inactive' },
+                { name: 'User15', age: 32, status: 'pending' },
+                { name: 'User16', age: 36, status: 'active' },
+                { name: 'User17', age: 34, status: 'inactive' },
+                { name: 'User18', age: 21, status: 'pending' },
+                { name: 'User19', age: 39, status: 'active' },
+                { name: 'User20', age: 37, status: 'inactive' },
+                { name: 'User21', age: 25, status: 'active' },
+                { name: 'User22', age: 30, status: 'inactive' },
+                { name: 'User23', age: 22, status: 'pending' },
+                { name: 'User24', age: 28, status: 'active' },
+                { name: 'User25', age: 35, status: 'inactive' },
+                { name: 'User26', age: 26, status: 'pending' },
+                { name: 'User27', age: 40, status: 'active' },
+                { name: 'User28', age: 31, status: 'inactive' },
+                { name: 'User29', age: 24, status: 'pending' },
+                { name: 'User30', age: 27, status: 'active' },
+                { name: 'User31', age: 29, status: 'inactive' },
+                { name: 'User32', age: 33, status: 'pending' },
+                { name: 'User33', age: 38, status: 'active' },
+                { name: 'User34', age: 23, status: 'inactive' },
+                { name: 'User35', age: 32, status: 'pending' },
+                { name: 'User36', age: 36, status: 'active' },
+                { name: 'User37', age: 34, status: 'inactive' },
+                { name: 'User38', age: 21, status: 'pending' },
+                { name: 'User39', age: 39, status: 'active' },
+                { name: 'User40', age: 37, status: 'inactive' },
+                { name: 'User41', age: 25, status: 'active' },
+                { name: 'User42', age: 30, status: 'inactive' },
+                { name: 'User43', age: 22, status: 'pending' },
+                { name: 'User44', age: 28, status: 'active' },
+                { name: 'User45', age: 35, status: 'inactive' },
+                { name: 'User46', age: 26, status: 'pending' },
+                { name: 'User47', age: 40, status: 'active' },
+                { name: 'User48', age: 31, status: 'inactive' },
+                { name: 'User49', age: 24, status: 'pending' },
+                { name: 'User50', age: 27, status: 'active' },
+                { name: 'User51', age: 29, status: 'inactive' },
+                { name: 'User52', age: 33, status: 'pending' },
+                { name: 'User53', age: 38, status: 'active' },
+                { name: 'User54', age: 23, status: 'inactive' },
+                { name: 'User55', age: 32, status: 'pending' },
+                { name: 'User56', age: 36, status: 'active' },
+                { name: 'User57', age: 34, status: 'inactive' },
+                { name: 'User58', age: 21, status: 'pending' },
+                { name: 'User59', age: 39, status: 'active' },
+                { name: 'User60', age: 37, status: 'inactive' },
+                { name: 'User61', age: 25, status: 'active' },
+                { name: 'User62', age: 30, status: 'inactive' },
+                { name: 'User63', age: 22, status: 'pending' },
+                { name: 'User64', age: 28, status: 'active' },
+                { name: 'User65', age: 35, status: 'inactive' },
+                { name: 'User66', age: 26, status: 'pending' },
+                { name: 'User67', age: 40, status: 'active' },
+                { name: 'User68', age: 31, status: 'inactive' },
+                { name: 'User69', age: 24, status: 'pending' },
+                { name: 'User70', age: 27, status: 'active' },
+                { name: 'User71', age: 29, status: 'inactive' },
+                { name: 'User72', age: 33, status: 'pending' },
+                { name: 'User73', age: 38, status: 'active' },
+                { name: 'User74', age: 23, status: 'inactive' },
+                { name: 'User75', age: 32, status: 'pending' },
+                { name: 'User76', age: 36, status: 'active' },
+                { name: 'User77', age: 34, status: 'inactive' },
+                { name: 'User78', age: 21, status: 'pending' },
+                { name: 'User79', age: 39, status: 'active' },
+                { name: 'User80', age: 37, status: 'inactive' },
+                { name: 'User81', age: 25, status: 'active' },
+                { name: 'User82', age: 30, status: 'inactive' },
+                { name: 'User83', age: 22, status: 'pending' },
+                { name: 'User84', age: 28, status: 'active' },
+                { name: 'User85', age: 35, status: 'inactive' },
+                { name: 'User86', age: 26, status: 'pending' },
+                { name: 'User87', age: 40, status: 'active' },
+                { name: 'User88', age: 31, status: 'inactive' },
+                { name: 'User89', age: 24, status: 'pending' },
+                { name: 'User90', age: 27, status: 'active' },
+                { name: 'User91', age: 29, status: 'inactive' },
+                { name: 'User92', age: 33, status: 'pending' },
+                { name: 'User93', age: 38, status: 'active' },
+                { name: 'User94', age: 23, status: 'inactive' },
+                { name: 'User95', age: 32, status: 'pending' },
+                { name: 'User96', age: 36, status: 'active' },
+                { name: 'User97', age: 34, status: 'inactive' },
+                { name: 'User98', age: 21, status: 'pending' },
+                { name: 'User99', age: 39, status: 'active' },
+                { name: 'User100', age: 37, status: 'inactive' },
+            ];
+            // let buttonNext = document.getElementById('next');
+            // let buttonPrev = document.getElementById('prev');
+            // let divUsers = document.getElementById('users');
+
+            // let count = 10;
+            // let index = 0;
+
+            // let arrayIter = function (array) {
+            //     if (count <= array.length) {
+            //         while (index < count) {
+            //             let user = array[index];
+            //             let p = document.createElement('p');
+            //             p.innerText = `${user.name},${user.age},${user.status}`;
+            //             divUsers.appendChild(p);
+            //             index++;
+            //         }
+
+            //         count += 10;
+            //     }
+            //     console.log(index, count);
+            // };
+
+            // buttonNext.onclick = function () {
+            //     arrayIter(people);
+            // };
+
+            // let i = 0;
+            // let prevArray = function (array) {
+            //     while (i < index - 10) {
+            //         let user = people[i];
+            //         let p = document.createElement('p');
+            //         p.innerText = `${user.name},${user.age},${user.status}`;
+            //         divUsers.appendChild(p);
+            //         i++;
+            //     }
+            // };
+            // buttonPrev.onclick = function () {
+            //     prevArray(people);
+            // };
+
+            let buttonNext = document.getElementById('next');
+            let buttonPrev = document.getElementById('prev');
+            let divUsers = document.getElementById('users');
+            let ul = document.querySelectorAll('#ulUser > li');
+
+            let endPoint = 0;
+            let arrayIter = function (array, predicate) {
+                if (predicate === 'next') {
+                }
+                if (predicate === 'prev') {
+                }
+                console.log(endPoint);
+            };
+
+            buttonNext.onclick = function () {
+                arrayIter(people, 'next');
+            };
+
+            buttonPrev.onclick = function () {
+                arrayIter(people, 'prev');
+            };
+			
+        </script>
+    </body>
+</html>

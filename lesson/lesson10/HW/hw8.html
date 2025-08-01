@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <style>
+        form {
+            font-size: 25px;
+        }
+        input {
+            display: block;
+        }
+        button {
+            margin-bottom: 25px;
+        }
+        table {
+            border-collapse: collapse; /* убирает двойные линии между ячейками */
+            width: 100%;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+
+        td {
+            padding: 8px;
+            text-align: center;
+        }
+    </style>
+    <body>
+        <form action="" name="f1">
+            <label>кількість рядків</label>
+            <input type="number" id="input1" />
+
+            <label>кількість ячеєк</label>
+            <input type="number" id="input2" />
+
+            <label>текст ячеєк</label>
+            <input type="text" id="input3" />
+
+            <button>create table</button>
+        </form>
+
+        <script>
+            // #kUSgFqWY - Створити 3 інпута та кнопку. Один визначає кількість рядків, другий – кількість ячеєк, третій – вміст ячеєк.
+            // При натисканні кнопки вся ця інформація зчитується і формується табличка з відповідним вмістом.
+
+            let tableCreater = document.forms.f1;
+
+            tableCreater.onsubmit = function (event) {
+                event.preventDefault();
+
+                let table = document.createElement('table');
+
+                for (let i = 0; i < tableCreater.input1.value; i++) {
+                    let tr = document.createElement('tr');
+                    for (let i = 0; i < tableCreater.input2.value; i++) {
+                        let td = document.createElement('td');
+                        td.innerText = tableCreater.input3.value;
+                        tr.appendChild(td);
+                    }
+                    table.appendChild(tr);
+                }
+                document.body.appendChild(table);
+            };
+        </script>
+    </body>
+</html>

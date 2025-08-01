@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .products img {
+                width: 200px;
+                height: 200px;
+            }
+            .products button {
+                display: block;
+                width: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="products"></div>
+        <script>
+            let products = [
+                {
+                    title: 'milk',
+                    price: 22,
+                    image: 'https://www.mcqueensdairies.co.uk/wp-content/uploads/2019/02/Mcqueens_1litre_whole_organic-300x300-3.jpg',
+                },
+                {
+                    title: 'juice',
+                    price: 27,
+                    image: 'https://images-na.ssl-images-amazon.com/images/I/61jL2GCuKLL._SX679_PIbundle-24,TopRight,0,0_AA679SH20_.jpg',
+                },
+                {
+                    title: 'tomato',
+                    price: 47,
+                    image: 'https://dictionary.cambridge.org/ru/images/thumb/tomato_noun_001_17860.jpg?version=5.0.74',
+                },
+                {
+                    title: 'tea',
+                    price: 15,
+                    image: 'https://www.verywellhealth.com/thmb/wOpYMxG1V_VxYcp4iJRmxRO4lZc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-693893647-588d21e413dd411cb1f2b0a0ea3e02da.jpg',
+                },
+            ];
+
+            let productDiv = document.getElementsByClassName('products')[0];
+
+            for (const product of products) {
+                let productBlock = document.createElement('div');
+
+                let productTitle = document.createElement('h2');
+                productTitle.innerText = `${product.title}: ${product.price}`;
+
+                let productImage = document.createElement('img');
+                productImage.src = product.image;
+
+                let buttonElement = document.createElement('button');
+                buttonElement.innerText = 'add to cart';
+
+                buttonElement.onclick = function () {
+                    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                    cart.push(product);
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                };
+
+                productBlock.append(productTitle, productImage, buttonElement);
+                productDiv.appendChild(productBlock);
+            }
+        </script>
+    </body>
+</html>

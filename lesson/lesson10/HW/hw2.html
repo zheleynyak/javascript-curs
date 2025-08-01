@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <form action="" name="f1">
+            <input type="text" name="age" />
+            <button>send</button>
+        </form>
+        <script>
+            // #j693ca8 – створити інпут, який приймає вік людини, та кнопку, яка підтверджує дію. При натисканні на кнопку зчитати інформацію з інпуту та перевірити вік, чи менше він за 18, та повідомити про це користувача
+
+            let f1 = document.forms['f1'];
+            f1.onsubmit = function (event) {
+                event.preventDefault();
+                if (this.age.value >= 18) {
+                    console.log('success');
+                } else if (this.age.value <= 18) {
+                    console.log('go to kindergarten');
+                }
+            };
+        </script>
+    </body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            #target {
+                width: 200px;
+                height: 200px;
+                background-color: blueviolet;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="target"></div>
+        <form id="f1">
+            <input id="i1" name="username" />
+            <button>send</button>
+        </form>
+        <script>
+            let target = document.getElementById('target');
+            // target.onclick = function (event) {
+            //     console.log('click');
+            //     console.log(event);
+            // };
+
+            // target.onmousemove = function (event) {
+            //     // console.log('move');
+            //     console.log(event.clientX, event.clientY);
+            //     this.style.background = `rgb(${event.clientX},${event.clientY},${event.clientX})`;
+            // };
+
+            // target.addEventListener('click', function (event) {
+            //     console.log('adfasdf');
+            // });
+
+            // target.onmouseover = function () {
+            //     console.log('over');
+            // };
+
+            // target.onmouseleave = function () {
+            //     console.log('leav');
+            // };
+
+            // let i1 = document.getElementById('i1');
+            // i1.oninput = function () {
+            //     console.log(this.value);
+            //     target.innerText = this.value;
+            // };
+
+            // let f1 = document.forms.f1;
+
+            // f1.onsubmit = function (event) {
+            //     event.preventDefault();
+            //     let user = { name: this.username.value };
+            //     console.log(user);
+            // };
+
+            window.onload = function () {
+                console.log('load');
+            };
+
+            document.onreadystatechange = function () {
+                console.log(document.readyState);
+            };
+        </script>
+    </body>
+</html>
