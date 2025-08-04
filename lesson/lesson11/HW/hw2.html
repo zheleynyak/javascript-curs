@@ -1,10 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Title</title>
+    </head>
+    <body>
+        <script>
+            fetch('https://dummyjson.com/recipes')
+                .then((res) => res.json())
+                .then((value) => {
+                    let { recipes } = value;
+                    console.log(recipes);
+
+                    for (const recipe of recipes) {
+                        let dish = document.createElement('div');
+                        dish.classList.add('dish');
+                        const ul = document.createElement('ul');
+                        for (const ingredient of recipe.ingredients) {
+                            const li = document.createElement('li');
+                            li.innerText = ingredient;
+                            ul.appendChild(li);
+                        }
+                        dish.innerText = `
+                        	UserID: ${recipe.userId},
+                        	ID: ${recipe.id},
+                        	Name: ${recipe.name}, 
+                        	Cook Time Minutes: ${recipe.cookTimeMinutes},
+                        	Calories Per Serving: ${recipe.caloriesPerServing}
+                        	Cuisine: ${recipe.cuisine},
+                        	Difficulty: ${recipe.difficulty},
+                        	Instructions: ${recipe.instructions},
+                        	MealType: ${recipe.mealType},
+                        	Prep Time Minutes: ${recipe.prepTimeMinutes},
+                        	Rating: ${recipe.rating},
+                        	Review Count: ${recipe.reviewCount},
+                        	Servings: ${recipe.servings},
+                        	Tags: ${recipe.tags},
+                        `;
+                        dish.appendChild(ul);
+                        document.body.appendChild(dish);
+                    }
+                });
+        </script>
+    </body>
 </html>

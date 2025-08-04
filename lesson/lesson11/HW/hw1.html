@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            body {
+                font-family: sans-serif;
+                background-color: #f7f7f7;
+                margin: 0;
+                padding: 20px;
+            }
+
+            #carts {
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .cart {
+                border: 2px dashed #bbb;
+                padding: 15px;
+                background-color: #fff;
+                border-radius: 10px;
+            }
+
+            .product {
+                display: flex;
+                justify-content: center;
+                border: 1px solid #ccc;
+                margin-top: 15px;
+                padding: 10px;
+                border-radius: 8px;
+                background-color: #fefefe;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            }
+
+            .img {
+                flex-shrink: 0;
+                margin-right: 20px;
+            }
+
+            .img img {
+                width: 300px;
+                height: auto;
+                border-radius: 6px;
+                object-fit: cover;
+                border: 1px solid #ddd;
+            }
+
+            .productInfo {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .productInfo p {
+                margin: 4px 0;
+                font-size: 19px;
+            }
+
+            .productInfo p:first-child {
+                font-weight: bold;
+                font-size: 16px;
+                margin-bottom: 6px;
+                margin-right: 500px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="carts"></div>
+        <script>
+            // 	#HmvAfRQM – взяти https://dummyjson.com/docs/carts та вивести інформацію про всі корзини. Відобразити всі поля кожної корзини.
+
+            let cartsDiv = document.getElementById('carts');
+
+            fetch('https://dummyjson.com/carts')
+                .then((res) => res.json())
+                .then((value) => {
+                    let { carts } = value;
+
+                    for (const cart of carts) {
+                        const cartDiv = document.createElement('div');
+                        cartDiv.classList.add('cart');
+
+                        for (const product of cart.products) {
+                            console.log(product);
+
+                            const productDiv = document.createElement('div');
+                            productDiv.classList.add('product');
+
+                            const productInfo = document.createElement('div');
+                            productInfo.classList.add('productInfo');
+
+                            const id = document.createElement('p');
+                            id.innerText = product.id;
+
+                            const title = document.createElement('p');
+                            title.innerText = product.title;
+
+                            const total = document.createElement('p');
+                            total.innerText = product.total;
+
+                            const discountPercentage = document.createElement('p');
+                            discountPercentage.innerText = product.discountPercentage;
+
+                            const discountedTotal = document.createElement('p');
+                            discountedTotal.innerText = product.discountedTotal;
+
+                            const price = document.createElement('p');
+                            price.innerText = product.price;
+
+                            const quantity = document.createElement('p');
+                            quantity.innerText = product.quantity;
+
+                            const productImg = document.createElement('img');
+                            productImg.src = product.thumbnail;
+
+                            const divImg = document.createElement('div');
+                            divImg.classList.add('img');
+                            divImg.appendChild(productImg);
+
+                            productInfo.append(id, title, total, discountPercentage, discountedTotal, price, quantity);
+
+                            productDiv.append(productInfo, divImg);
+                            cartDiv.appendChild(productDiv);
+                            cartsDiv.appendChild(cartDiv);
+                        }
+                    }
+                });
+        </script>
+    </body>
+</html>
